@@ -1,0 +1,18 @@
+{
+  "name": "wss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wss.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
