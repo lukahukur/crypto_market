@@ -3,7 +3,7 @@ import {createSlice,createAsyncThunk,} from "@reduxjs/toolkit";
 export const fetchData = createAsyncThunk(
     'data/fetchData',
     async ({symbol,time,count})=>{
-                const res = await fetch(`http://localhost:5000/${symbol}/${time}/${count}`).then(data => data.json());
+                const res = await fetch(`http://localhost:2004/${symbol}/${time}/${count}`).then(data => data.json());
                 return res
 
     }
