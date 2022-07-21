@@ -1,24 +1,19 @@
-import {useSelector,useDispatch} from "react-redux";
 import React from 'react'
-import {useEffect} from "react";
-import {addData, fetchData} from "./store/dataSlice";
+import {useEffect,useState} from "react";
+import {useGetDataQuery} from "./store/dataQuery";
+
 function App() {
-  const data = useSelector(state => state.dataSlice.data)
-  const dispatch = useDispatch();
+const {data=[],isLoading} = useGetDataQuery();
 
+useEffect(()=>{
+  data.length &&console.log(data);
 
+},[data]);
 
-  useEffect(()=>{
-    return ()=>{dispatch(fetchData({symbol:'BTCUSDT',time:'1w',count:100}))};
-  },[dispatch])
-
-
-  useEffect(()=>{
-    console.log(data)
-  },[data])
+if(isLoading) return <h1>Loading</h1>
   return (
     <div>
-
+    
     </div>
   );
 }

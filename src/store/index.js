@@ -1,7 +1,8 @@
 import {configureStore} from "@reduxjs/toolkit";
-
-import dataSlice from "./dataSlice"
+import {binanceApi} from "./dataQuery";
 export const store = configureStore({
     reducer:{
-        dataSlice:dataSlice}
+        [binanceApi.reducerPath]:binanceApi.reducer
+    },
+    middleware:getDefaultMiddleware => getDefaultMiddleware().concat(binanceApi.middleware)
 })
